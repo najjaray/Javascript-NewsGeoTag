@@ -1,0 +1,84 @@
+<html>
+<head>
+<script type="text/javascript" src="http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=YD-eQRpTl0_JX2E95l_xAFs5UwZUlNQhhn7lj1H"></script>
+<script type="text/javascript" src="getdata.js"></script>
+<script type="text/javascript" src="interface.js"></script>
+
+<style type="text/css">
+#map{
+height: 75%;
+width: 100%;
+}
+</style>
+</head>
+<body>
+<form name='f1' action='data.php'>
+	<div id='header'>
+		<img src='http://l.yimg.com/a/i/ww/met/yahoo_logo_us_061509.png'><hr>
+	</div>	
+	<center>
+	<table border='0' name='maintable' width='%100'>
+	<tr>
+		<th align='center' valign='top' width='%40'>
+			<table id='options' border='0' align='center' valign='top' width='%100'>
+				<!--<tr>Use Key<input type='checkbox'><th>Key:<input name='key' value='university'></th></tr>-->
+				<tr align='center' valign='top'><th> please select location(s) then <input type='button' value='submit' onclick='javascript:submit_form()'></th><tr>
+				<tr id='pages' align='center' valign='top'><th><hr></th><tr>
+			</table>
+				
+	<div id ='data'>
+		<div id='list'>
+			
+				<input name='url' type='hidden' value='<?echo $_GET["url"]?>'>
+				<input name='ta' type='hidden'>
+				<!--<input type='button' onclick="addraw('options','a');">-->
+			
+			</form>
+		</div>
+		</th>
+		
+		<th>
+		<div id="map" align='center' valign='top'>
+		</div>
+
+			</th>
+			<!--
+			<th align='center' valign='top' width='%20'>
+				<div>
+				<table id='selectedloc' border='1' align='center' valign='top' width='%100'>
+					<tr align='center' valign='top'><th> Selected location(s) </th><tr>
+				</table>
+			</div>
+			</th>
+			-->
+		</tr>
+		</table>
+		</center>
+		
+		
+		<script type='text/javascript'>
+			// Create a Map that will be placed in the 'map' div.
+			var map = new YMap(document.getElementById('map'),YAHOO_MAP_SAT ,new YSize(700,500));	
+			
+			var list_defult_bgcolor = '#ffffff';
+			var list_highlighted_bgcolor = '#9966CC';
+			var list_selected_bgcolor ='#660066';
+			var list_font_color_light = "#ffffff";
+			var list_font_color_dark = "#000000";
+			var list_number_of_items = 20;
+			var list_current_page = 1;
+			var lsit_total_pages = 1;
+			var wikipedia_api_key = '11E2E54C-694FE434-8BCAA7A0-90D35F25-F9C1D843-E513D39A-9238FB09-319D7DA1';
+			var map_shape_border_color = '#CCFF00';
+			var map_shape_border = 5;
+			var map_shape_fill_color = '#9966CC';
+			var map_shape_transparence = 1;
+			var wiki_data = new Object;
+			var place_Polyline = new Object;
+			var selected_items = new Object;
+			selected_items.count = 0;
+			window.onload = startMap;
+		</script>
+	</body>
+	</html>
+
